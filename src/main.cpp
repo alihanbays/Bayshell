@@ -3,12 +3,25 @@
 
 using namespace std;
 int main() {
-  // Flush after every std::cout / std:cerr
-  cout << unitbuf;
-  cerr << unitbuf;
 
-  cout << "$ ";
+	while(true) {
 
-  string input;
-  getline(cin, input);
+		// Flush after every std::cout / std:cerr
+		cout << unitbuf;
+		cerr << unitbuf;
+
+		cout << "$ ";
+
+		string input;
+		getline(cin, input);
+
+		if (input == "exit") {
+			break;
+		} else {
+			cout << input << ": command not found " << endl;
+		}
+		break;
+	}
+
+	return 0;
 }
