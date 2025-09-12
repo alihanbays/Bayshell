@@ -20,7 +20,7 @@ int main() {
 		} else {
 			cout << input << ": command not found " << endl;
 		}
-		break;
+	
 	}
 
 	return 0;
