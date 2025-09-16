@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <sstream>
 
 using namespace std;
 int main() {
@@ -13,14 +14,26 @@ int main() {
 		cout << "$ ";
 
 		string input;
-		getline(cin, input);
+		string command;
+		vector<string> commands;
 
-		if (input == "exit") {
-			break;
+		getline(cin, input);	
+		stringstream ss(input);
+		
+		while (getline(ss, command, ' ')) {
+			commands.push_back(command);
+		}
+		
+		if (commands[0] == "exit") {
+			if (commands.size() != 2) {
+				cout << "Invalid number of arguments\n";
+			} else {
+				int num = stoi(commands[1]);
+				return num;			
+			}
 		} else {
 			cout << input << ": command not found " << endl;
 		}
-	
 	}
 
 	return 0;
