@@ -1,1 +1,1 @@
-Bayshell is a simple shell implementation with C++
+Bayshell is a simple shell implementation with C++.
